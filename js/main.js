@@ -134,16 +134,13 @@ let letters = [
 let selectorArr = new Array;
 let countMatches = 0;
 let makeSelection = true;
-    //set the board up by random postions
-let limited = letters.sort(() => {
+let limited = letters.sort(() => { //set the board up by random postions
     return Math.random() - 0.5;
 }).filter((items, i) => i<6);
 
 function loadGrid() {
-        //creates a matching pair
-    limited.push(...limited);
-    limited.forEach((v,i) => {
-        //populate the board
+    limited.push(...limited); //creates a matching pair
+    limited.forEach((v,i) => {//populate the board
         const box = document.querySelector('#container')
         const block = document.createElement('div')
         block.innerHTML = v.url
@@ -151,15 +148,13 @@ function loadGrid() {
         block.setAttribute('class','letter')
         box.append(block);
 
-        //create audio files 
-        const track = document.createElement('audio');
+        const track = document.createElement('audio');//create audio files 
         track.setAttribute('data-id', v.type)
         track.setAttribute('class','tracksounds')
         track.setAttribute('src', v.audioUrl)
         block.append(track)
     })
-    //hides all the letters until user clicks 
-    const letter = document.querySelectorAll('i');
+    const letter = document.querySelectorAll('i'); //hides all the letters until user clicks 
     letter.forEach(l => {
         l.style.visibility = 'hidden';
     })
@@ -172,13 +167,10 @@ function playGame() {
     squares.forEach(currentSelection => {
         currentSelection.addEventListener('click', evt => {
             if (makeSelection === true) {
-                if (selectorArr.length < 2 && !evt.target.attributes.selected) {
-                    //plays the audio on current selection
-                    evt.target.querySelector('.tracksounds').play();
-                    //animates flip in 
-                    currentSelection.classList.add('animate__animated', 'animate__flipInY')  
-                    //this shows the letters 
-                    evt.target.querySelector('i').style.visibility = "visible";
+                if (selectorArr.length < 2 && !evt.target.attributes.selected) { //plays the audio on current selection
+                    evt.target.querySelector('.tracksounds').play(); 
+                    currentSelection.classList.add('animate__animated', 'animate__flipInY')  //animates flip in 
+                    evt.target.querySelector('i').style.visibility = "visible";//this shows the letters 
                     currentSelection.setAttribute('selected', 'yes');
                     selectorArr.push(currentSelection.getAttribute('data-id'))
                 }
@@ -191,24 +183,20 @@ function playGame() {
     })
 }
 
-//checks to see if there's a match else it empty out the array and start the selection process over
-function checkMatches() {
+
+function checkMatches() { //checks to see if there's a match else it empty out the array and start the selection process over
     if(selectorArr[0].includes(selectorArr[1])) {
         setTimeout(function () {
-            //animation
             let card = [... document.querySelectorAll('[selected="yes"]')];
-            card.forEach(v => {
+            card.forEach(v => { //animation
                 v.classList.remove('animate__animated', 'animate__flipInY')
                 v.classList.add('animate__animated', 'animate__zoomOutLeft')
                 v.removeAttribute('selected');
             })
             document.getElementById("match").play();
-            //this will hide the letters 
-            hideLetter();
-            //it will remove the card
-            removeCard();
-            //empty out the array again
-            selectorArr = [];
+            hideLetter(); //this will hide the letters 
+            removeCard(); //it will remove the card
+            selectorArr = []; //empty out the array again
             countMatches+=1;
             reloadGame();
             setTimeout(function () {
@@ -224,18 +212,15 @@ function checkMatches() {
                 document.getElementById("flip").pause();
                 makeSelection = true;
             }, 1000);
-            //animation
             let card = [... document.querySelectorAll('[selected="yes"]')];
-            card.forEach(v => {
+            card.forEach(v => { //animation
                 v.classList.remove('animate__animated', 'animate__flipInY')
                 v.classList.add('animate__animated', 'animate__flipInX')
                 v.removeAttribute('selected');
             })
             selectorArr = [];
-                 //remove the letters    
-                 hideLetter();
+                 hideLetter(); //remove the letters
         }, 2000);
-        console.log('does not match')
     }
 }
 
@@ -243,24 +228,20 @@ function removeCard() {
     let card = [... document.querySelectorAll('[selected="yes"]')];
     card.forEach(v => {
         v.style.visibility = 'hidden';
-        // v.setAttribute('class', 'letter')
     })
 }
 
-function hideLetter() {
+function hideLetter() { //remove the letters. Note: in the future, use css here
     setTimeout(function () {
-        //remove the letters    
-            const letter = document.querySelectorAll('i');
+            const letter = document.querySelectorAll('i'); 
             letter.forEach(l => {
             l.style.visibility = 'hidden';
             })
         }, 100);
 }
 
-function reloadGame() {
-    console.log(countMatches)
-    //restart game when number of elements in array divide by 2
-    if (countMatches === (limited.length / 2)) {
+function reloadGame() {    
+    if (countMatches === (limited.length / 2)) { //restart game when number of elements in array divide by 2
         document.getElementById("cheer").play();
         const jsConfetti = new JSConfetti()
         jsConfetti.addConfetti(        {
