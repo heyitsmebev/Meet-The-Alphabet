@@ -12,8 +12,9 @@
  4. ➤ [Technologies Used](#technologies-used) 
  5. ➤ [Getting Started](#start-game) 
  6. ➤ [Winning Match](#a-winning-match) 
- 7. ➤ [No Matches](#no-matches) 
- 8. ➤ [Credits](#credits) 
+ 7. ➤ [No Matches](#no-matches)
+ 8. ➤ [Next Steps](#next-steps) 
+ 9. ➤ [Credits](#credits)
 
 ## About The Project
 This game was designed to help my friend's kids ages 4 and 6 learn their alphabet. The game is help with memorization, concentration, and learning english vocabulary by matching pairs of cards. Each card comes with audio and text to help students learn the sounds of the alphabet. You have to match all the letters in order to complete the game.
@@ -44,6 +45,10 @@ Make a selection until you find a matching pair![match](/assets/images/matches.p
 ## No Matches
 If no matches are found, the cards will remain in place and you can make a new selection. You will continue the game until you either restart the game or each match has been completed.
 ![nomatch](/assets/images/unmatches.png)
+
+## Next Steps
+-   Create different levels of difficulty
+-   Add a score board with #ofmoves or timer
 
 ## Credits
 Beverly Nguyen
