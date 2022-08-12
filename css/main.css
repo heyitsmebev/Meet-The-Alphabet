@@ -26,9 +26,7 @@ h1 {
     grid-template-rows: repeat(3, auto); 
     gap: 3px 3px; 
     margin: auto;
-    /* border: 3px solid rgb(190, 203, 213); */
     background-color: white;
-    /* padding: 40px; */
     justify-items: center;
     align-content: space-evenly;
     align-items: center;
@@ -36,9 +34,6 @@ h1 {
     margin: 0 auto;
 }
 .px-4.py-5.my-5.text-center {
-    /* width: 83.33%;
-         */
-    /* margin: 10%; */
     background-color: white;
     margin: 0 auto;
     padding: 40px;
@@ -55,8 +50,6 @@ h1 {
     box-shadow: 7px 5px 21px -14px rgba(0,0,0,0.75);
     -webkit-box-shadow: 7px 5px 21px -14px rgba(0,0,0,0.75);
     -moz-box-shadow: 7px 5px 21px -14px rgba(0,0,0,0.75);
-    /* align-self: center;
-    justify-self: center; */
     height: 200px;
 }
 

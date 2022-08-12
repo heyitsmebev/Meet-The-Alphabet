@@ -131,39 +131,30 @@ let letters = [
     }
 ]
 
-//extras:
+//Icebox:
     //create an array that only uses some of the letters depending on how difficult they want it to be
     //i could even put in a score board with a timer 
     //put a start button when they land on the page. 
-    //ending screen
-    //readme file 
 
 let selectorArr = new Array;
 let countMatches = 0;
 let makeSelection = true;
+    //set the board up by random postions
 let limited = letters.sort(() => {
     return Math.random() - 0.5;
 }).filter((items, i) => i<2);
 
 function loadGrid() {
-    //figure out a way to randomize the grid by filtering out pairs and creating a smaller board based on a larger array
-
+        //creates a matching pair
     limited.push(...limited);
-    //set the board up by random postions***
     limited.forEach((v,i) => {
         //populate the board
-        //here i am creating div adding in the url into innerHTML
         const box = document.querySelector('#container')
         const block = document.createElement('div')
         block.innerHTML = v.url
         block.setAttribute('data-id', v.type)
         block.setAttribute('class','letter')
         box.append(block);
-
-            // //create test, must delete  
-            // const deletelater = document.createElement('div');
-            // deletelater.innerHTML = v.type
-            // block.append(deletelater)
 
         //create audio files 
         const track = document.createElement('audio');
@@ -191,7 +182,7 @@ function playGame() {
                     evt.target.querySelector('.tracksounds').play();
                     //animates flip in 
                     currentSelection.classList.add('animate__animated', 'animate__flipInY')  
-                    //ths shows the letters 
+                    //this shows the letters 
                     evt.target.querySelector('i').style.visibility = "visible";
                     currentSelection.setAttribute('selected', 'yes');
                     selectorArr.push(currentSelection.getAttribute('data-id'))
@@ -273,7 +264,7 @@ function hideLetter() {
 
 function reloadGame() {
     console.log(countMatches)
-    //restart game when there's a total of 12 matches or number of elements in array divide by 2
+    //restart game when number of elements in array divide by 2
     if (countMatches === (limited.length / 2)) {
         document.getElementById("cheer").play();
         const jsConfetti = new JSConfetti()
