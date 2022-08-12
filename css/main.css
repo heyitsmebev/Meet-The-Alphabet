@@ -1,0 +1,66 @@
+body {
+    background-color: rgb(218, 226, 234);
+}
+h1 {
+    text-align: center;
+    color: rgb(23, 42, 72);
+}
+
+.congrats {
+    width: 100px;
+    position: absolute;
+    color: red;
+    font-size: 60px;
+}
+
+.fa-solid, .fas {
+    font-size: 90px;
+    margin: auto;
+    color: rgb(23, 42, 72);
+}
+
+#container {
+    display: grid; 
+    grid-template-columns: repeat(4, auto);
+    grid-auto-flow: column;
+    grid-template-rows: repeat(3, auto); 
+    gap: 3px 3px; 
+    margin: auto;
+    /* border: 3px solid rgb(190, 203, 213); */
+    background-color: white;
+    /* padding: 40px; */
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+}
+.px-4.py-5.my-5.text-center {
+    /* width: 83.33%;
+         */
+    /* margin: 10%; */
+    background-color: white;
+    margin: 0 auto;
+    padding: 40px;
+    width: 83.33%;
+
+}
+
+.letter {
+    background-color: rgb(247, 208, 69);
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-shadow: 7px 5px 21px -14px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 7px 5px 21px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 5px 21px -14px rgba(0,0,0,0.75);
+    /* align-self: center;
+    justify-self: center; */
+    height: 200px;
+}
+
+button#resetButton {
+    margin-top: 30px;
+}
+
