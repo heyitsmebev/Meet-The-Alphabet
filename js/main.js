@@ -131,18 +131,13 @@ let letters = [
     }
 ]
 
-//Icebox:
-    //create an array that only uses some of the letters depending on how difficult they want it to be
-    //i could even put in a score board with a timer 
-    //put a start button when they land on the page. 
-
 let selectorArr = new Array;
 let countMatches = 0;
 let makeSelection = true;
     //set the board up by random postions
 let limited = letters.sort(() => {
     return Math.random() - 0.5;
-}).filter((items, i) => i<2);
+}).filter((items, i) => i<6);
 
 function loadGrid() {
         //creates a matching pair
