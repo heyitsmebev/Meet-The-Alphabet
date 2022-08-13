@@ -138,6 +138,7 @@ let limited = letters.sort(() => { //set the board up by random postions
     return Math.random() - 0.5;
 }).filter((items, i) => i<6);
 
+console.log(limited)
 function loadGrid() {
     limited.push(...limited); //creates a matching pair
     limited.forEach((v,i) => {//populate the board
@@ -209,7 +210,6 @@ function checkMatches() { //checks to see if there's a match else it empty out t
         setTimeout(function () {
             document.getElementById("flip").play();
             setTimeout(function () {
-                document.getElementById("flip").pause();
                 makeSelection = true;
             }, 1000);
             let card = [... document.querySelectorAll('[selected="yes"]')];
