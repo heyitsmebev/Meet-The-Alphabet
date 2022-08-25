@@ -17,7 +17,7 @@
  9. ➤ [Credits](#credits)
 
 ## About The Project
-This game was designed to help my friend's kids ages 4 and 6 learn their alphabet. The game is help with memorization, concentration, and learning english vocabulary by matching pairs of cards. Each card comes with audio and text to help students learn the sounds of the alphabet. You have to match all the letters in order to complete the game.
+This game was designed to help my friend's kids ages 4 and 6 learn their alphabet. The game helps with memorization, concentration, and learning english vocabulary by matching pairs of cards. Each card comes with audio and text to help students learn the sounds of the alphabet. You have to match all the letters in order to complete the game.
 
 ## Overview
 In this project, the user will make selections by clicking on a card to find matches. When a match has been made, the cards will be removed and a new selection can be made. I implemented general search algorithms to find elements that are included in the given array.
